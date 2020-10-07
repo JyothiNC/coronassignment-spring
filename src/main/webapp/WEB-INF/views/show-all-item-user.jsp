@@ -9,6 +9,14 @@
 <title>Product List</title>
 </head>
 <body>
+      	<ul> 
+	      	<li class="nav-item">
+		       <a class="nav-link" href="${pageContext.request.contextPath }/user/home">USER DASHBOARD</a>
+		    </li>
+		    <li class="nav-item">
+	      	  <a class="nav-link" href="${pageContext.request.contextPath }/logout">Sign Out</a>
+	      	</li>
+	      </ul>	
 	 <h3>Products List</h3>
 <c:choose>  
         <c:when test="${productlist == null || productlist.isEmpty() }">  

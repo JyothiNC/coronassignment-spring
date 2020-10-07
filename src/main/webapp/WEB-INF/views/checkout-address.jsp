@@ -9,6 +9,14 @@
 <title>User address/title></title>
 </head>
 <body>
+      	<ul> 
+	      	<li class="nav-item">
+		       <a class="nav-link" href="${pageContext.request.contextPath }/user/home">USER DASHBOARD</a>
+		    </li>
+		    <li class="nav-item">
+	      	  <a class="nav-link" href="${pageContext.request.contextPath }/logout">Sign Out</a>
+	      	</li>
+	      </ul>	
 <h3 class="jumbotron">Enter Shipping Address</h3>
 		<hr/>
  <section class="container-fluid p-4">

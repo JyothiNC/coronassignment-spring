@@ -39,7 +39,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-
+		http.authorizeRequests().antMatchers("/").permitAll().and()
+        .authorizeRequests().antMatchers("/console/**").permitAll();
+		http.csrf().disable();
+		http.headers().frameOptions().disable();
+		
 		http.authorizeRequests()
 		.antMatchers("/admin/**").hasAuthority("ADMIN")
 		.antMatchers("/user/**").hasAuthority("USER");		
@@ -47,7 +51,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.formLogin().loginPage("/login").failureUrl("/login?error=true").defaultSuccessUrl("/home")
 				.usernameParameter("unm").passwordParameter("pwd");
 
-		http.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/");
+		http.logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/custom-login?logout=true");
 		
 		http.exceptionHandling().accessDeniedPage("/WEB-INF/views/error-page.jsp");
 	}

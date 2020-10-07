@@ -9,6 +9,15 @@
 <title>Summary</title>
 </head>
 <body>
+      	<ul> 
+	      	<li class="nav-item">
+		       <a class="nav-link" href="${pageContext.request.contextPath }/user/home">USER DASHBOARD</a>
+		    </li>
+		    <li class="nav-item">
+	      	  <a class="nav-link" href="${pageContext.request.contextPath }/logout">Sign Out</a>
+	      	</li>
+	      </ul>	
+
 <h1 align="center">ORDER SUMMARY</h1>
 
 <div class="alert alert-success">
